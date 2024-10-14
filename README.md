@@ -1,17 +1,25 @@
-# flutter_streamcontroller
 
-A new Flutter project.
 
-## Getting Started
+Title: Flutter Pagination with Cubit and Repository Pattern
 
-This project is a starting point for a Flutter application.
+Description: This project is a Flutter application demonstrating pagination of posts using the Cubit pattern and the Repository pattern. The app fetches post data from the API https://jsonplaceholder.typicode.com and displays it in a list format. It also includes the option to switch to mock data for testing purposes using the Factory pattern.
 
-A few resources to get you started if this is your first Flutter project:
+Key Features:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Cubit: State management using Cubit for handling post loading and UI state management.
+Repository Pattern: Encapsulation of data access logic through the PostRepository interface.
+Factory Pattern: Creation of different repository implementations (real API and mock) for flexibility and testability.
+Pagination: Loads posts in increments of 10 at a time with the ability to fetch more data.
+Usage:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Flutter-BLoC-Cubit-Example-Paginated-Posts-from-JSONPlaceholder
+Clone the repository: git clone <url>
+Install dependencies: flutter pub get
+Run the app: flutter run
+Technologies:
+
+Flutter
+Dart
+Bloc (Cubit)
+HTTP
+License: MIT
+
