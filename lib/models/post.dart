@@ -5,7 +5,6 @@ class Post {
 
   Post({required this.id, required this.title, required this.body});
 
-  // Фабричный метод для создания Post из JSON
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
       id: json['id'],

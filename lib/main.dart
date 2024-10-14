@@ -40,8 +40,8 @@ class PostScreen extends StatelessWidget {
       body: BlocBuilder<PostCubit, PostState>(
         builder: (context, state) {
           if (state is PostInitial ||
-              state is PostLoading &&
-                  (state as PostLoading).runtimeType == PostInitial) {
+              (state is PostLoading &&
+                  (state as PostLoading).runtimeType == PostInitial)) {
             return Center(child: CircularProgressIndicator());
           } else if (state is PostError) {
             return Center(child: Text('Error: ${state.message}'));
