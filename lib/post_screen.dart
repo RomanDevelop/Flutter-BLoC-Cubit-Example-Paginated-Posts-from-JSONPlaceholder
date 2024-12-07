@@ -2,16 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_streamcontroller/cubit/post_cubit.dart';
 import 'package:flutter_streamcontroller/cubit/post_state.dart';
+import 'package:chucker_flutter/chucker_flutter.dart';
 
 class PostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Posts')),
+      appBar: AppBar(
+        title: const Text('Posts'),
+        actions: [
+          // Добавляем встроенную кнопку Chucker
+          ChuckerFlutter.chuckerButton,
+        ],
+      ),
       body: BlocBuilder<PostCubit, PostState>(
         builder: (context, state) {
           if (state is PostLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is PostLoaded) {
             return ListView.builder(
               itemCount: state.posts.length,
@@ -25,14 +32,14 @@ class PostScreen extends StatelessWidget {
           } else if (state is PostError) {
             return Center(child: Text('Error: ${state.message}'));
           }
-          return Center(child: Text('No posts available.'));
+          return const Center(child: Text('No posts available.'));
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.read<PostCubit>().fetchPosts();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

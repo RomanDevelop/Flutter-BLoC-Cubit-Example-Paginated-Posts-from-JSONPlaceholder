@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class Post {
   final int id;
   final String title;
@@ -11,5 +13,10 @@ class Post {
       title: json['title'],
       body: json['body'],
     );
+  }
+
+  static List<Post> fromJsonList(String jsonString) {
+    final List<dynamic> jsonData = jsonDecode(jsonString);
+    return jsonData.map((json) => Post.fromJson(json)).toList();
   }
 }
