@@ -15,7 +15,8 @@ Usage:
 Clone the repository: git clone <url>
 Install dependencies: flutter pub get
 Run the app: flutter run
-Technologies:
+Technologies:<img width="354" alt="Снимок экрана 2024-12-07 в 10 45 22" src="https://github.com/user-attachments/assets/7a036462-394b-4982-94f0-2c813fb45972">
+
 
 Flutter
 Dart
