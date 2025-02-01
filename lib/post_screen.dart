@@ -32,7 +32,7 @@ class PostScreen extends StatelessWidget {
           } else if (state is PostError) {
             return Center(child: Text('Error: ${state.message}'));
           }
-          return const Center(child: Text('No posts available.'));
+          return const Center(child: Text('You will find a lot of ...'));
         },
       ),
       floatingActionButton: FloatingActionButton(
